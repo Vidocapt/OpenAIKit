@@ -101,7 +101,7 @@ public final class OpenAIKitC {
     }
 }
 
-extension OpenAIKitC OpenAIProtocol {
+extension OpenAIKitC: OpenAIProtocol {
     public func listModels() async throws -> ListModelResponse {
         let serverUrl = try getServerUrl(path: "/models")
         return try await OpenAIKitSession.shared.decodeUrl(
