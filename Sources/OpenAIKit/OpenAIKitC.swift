@@ -39,7 +39,7 @@ import Foundation
 
 /// OpenAI provides the needed core functions of OpenAIKit.
 @available(macOS 10.15, iOS 13, watchOS 6, tvOS 13, *)
-public final class OpenAIKitClass {
+public final class OpenAIKitC {
     /// The configuration object used to store the API Key and Organization ID.
     private var config: Configuration
 
@@ -101,7 +101,7 @@ public final class OpenAIKitClass {
     }
 }
 
-extension OpenAIKitClass: OpenAIProtocol {
+extension OpenAIKitC OpenAIProtocol {
     public func listModels() async throws -> ListModelResponse {
         let serverUrl = try getServerUrl(path: "/models")
         return try await OpenAIKitSession.shared.decodeUrl(
